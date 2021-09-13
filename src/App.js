@@ -41,7 +41,7 @@ class App extends React.Component {
     const names = Object.keys(this.state);
 
     return (
-      <Fragment>
+      <>
 
         <Section title="Please leave feedback">
           <FeedbackOptions options={names} onLeaveFeedback={this.btnCklickCounter} />
@@ -57,7 +57,7 @@ class App extends React.Component {
             total={total} 
             positiveFeedbacks={positiveFeedbacks} />}
         </Section>
-      </Fragment>
+      </>
      
     )
   }

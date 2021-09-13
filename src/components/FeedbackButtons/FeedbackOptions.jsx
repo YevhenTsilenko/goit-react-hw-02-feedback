@@ -1,15 +1,22 @@
-import { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import shortid from 'short-id';
+import styles from './FeedbackButtons.module.css';
+
 function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
-        <Fragment>
+        <>
             {options.map((btnName) => (
-                <button key={shortid.generate()} name={btnName} onClick={onLeaveFeedback}>{btnName}</button>
+                <button key={shortid.generate()} name={btnName} onClick={onLeaveFeedback} className={styles.btn}>{btnName}</button>
             ))}
-        </Fragment>
+        </>
         
         
     )
 }
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.array.isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+  };
 
 export { FeedbackOptions };
